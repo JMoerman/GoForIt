@@ -1,8 +1,8 @@
-id: com.github.jmoerman.go-for-it
+id: com.github.jmoerman.goforit
 runtime: io.elementary.Platform
 runtime-version: '6'
 sdk: io.elementary.Sdk
-command: com.github.jmoerman.go-for-it
+command: com.github.jmoerman.goforit
 finish-args:
   # X11 + XShm access
   - --share=ipc
@@ -31,28 +31,30 @@ modules:
   - name: libpeas
     buildsystem: meson
     config-opts:
-      - "-Dlua51=false"
-      - "-Dvapi=true"
-      - "-Ddemos=false"
-      - "-Dglade_catalog=false"
+      - '-Dlua51=false'
+      - '-Dvapi=true'
+      - '-Ddemos=false'
+      - '-Dglade_catalog=false'
     sources:
       - type: archive
         url: https://download.gnome.org/sources/libpeas/1.28/libpeas-1.28.0.tar.xz
         sha256: 42d91993b46ed50f16add6d9577ecc22beb8e2dffa7101e2232c2b63733b8b15
-  - "shared-modules/libcanberra/libcanberra.json"
-  - name: go-for-it
+  - 'shared-modules/libcanberra/libcanberra.json'
+  - name: GoForIt
     buildsystem: cmake-ninja
     builddir: true
     config-opts:
-      - -DGLOBAL_PLUGIN_ICONS:BOOL=ON
-      - -DDEFAULT_PLUGINS:STRING=['launcherindicator']
-      - -DNO_CONTRIBUTE_DIALOG:BOOL=ON
-      - -DSHOW_ABOUT:BOOL=OFF
-      - -DUSE_GRANITE:BOOL=ON
+      - '-DGLOBAL_PLUGIN_ICONS:BOOL=ON'
+      - '-DDEFAULT_PLUGINS:STRING=["launcherindicator"]'
+      - '-DNO_CONTRIBUTE_DIALOG:BOOL=ON'
+      - '-DSHOW_ABOUT:BOOL=OFF'
+      - '-DUSE_GRANITE:BOOL=ON'
+      - '-DAPP_ID:STRING=com.github.jmoerman.goforit'
+      - '-DSCHEMA_PATH:STRING=/com/github/jmoerman/goforit'
     sources:
       - type: git
         url: 'https://github.com/JMoerman/Go-For-It.git'
-        tag: 1.9.3
-        commit: b2d6c236e0441f070b3f3cb9b63ea539207efc84
+        tag: 1.9.4
+        commit: 098cd53b2e71b65323db84ffba0b62de27486691
     post-install:
-      - install -Dm644 -t /app/share/licenses/com.github.jmoerman.go-for-it ../COPYING
+      - install -Dm644 -t /app/share/licenses/com.github.jmoerman.goforit ../COPYING
