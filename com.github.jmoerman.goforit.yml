@@ -33,8 +33,8 @@ modules:
       - '-Dglade_catalog=false'
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libpeas/1.28/libpeas-1.28.0.tar.xz
-        sha256: 42d91993b46ed50f16add6d9577ecc22beb8e2dffa7101e2232c2b63733b8b15
+        url: https://download.gnome.org/sources/libpeas/1.30/libpeas-1.30.0.tar.xz
+        sha256: 0bf5562e9bfc0382a9dcb81f64340787542568762a3a367d9d90f6185898b9a3
   - 'dependencies/libcanberra/libcanberra.json'
   - name: GoForIt
     buildsystem: cmake-ninja
@@ -50,7 +50,7 @@ modules:
     sources:
       - type: git
         url: 'https://github.com/JMoerman/Go-For-It.git'
-        tag: 1.9.5
-        commit: d68ace2cea42bbf8850d5f5539b97697cebcd50e
+        tag: 1.9.6
+        commit: b7c39dc45a0d89fadbaeac1b64a1bf6e497e875f
     post-install:
       - install -Dm644 -t /app/share/licenses/com.github.jmoerman.goforit ../COPYING
